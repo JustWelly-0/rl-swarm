@@ -157,12 +157,6 @@ class HivemindGRPOTrainer:
                 "eval_dataset": test_dataset,
             }
             trainer = HivemindGRPOTrainer.PublishingGRPOTrainer(
-                tokenizer=tokenizer,
-                # Add these parameters
-                gpu_memory_utilization=0.95,  # Increase GPU memory utilization
-                max_num_batched_tokens=4096,  # Reduce if still having memory issues
-                max_num_seqs=256,            # Reduce if needed
-                trust_remote_code=True,
                 self.node, self.dht, self.tokenizer, self.logger, **kwargs
             )
             self.train_and_save(trainer, train_dataset)

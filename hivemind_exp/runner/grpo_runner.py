@@ -100,7 +100,7 @@ class GRPORunner:
         logger.debug(f"Model parameters {model_args}")
         logger.debug(f"Training/evaluation parameters {training_args}")
 
-        batch_size = 1
+        batch_size = 2
         training_args.per_device_train_batch_size = batch_size
         training_args.num_generations = batch_size
 
